@@ -5,6 +5,7 @@
   <title>Document</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.js'></script>
   <script src='javascripts/app.js'></script>
 </head>
 <body ng-controller='PiratesController'>
@@ -18,5 +19,6 @@
   </div>
 </nav>
 {{ vm.number }}
+<div ng-view></div>
 </body>
 </html>
