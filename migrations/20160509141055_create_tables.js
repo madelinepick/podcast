@@ -1,14 +1,15 @@
 
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('pirates', function(table){
+  return knex.schema.createTable('podcasts', function(table){
   table.increments('id');
-  table.string('name');
-  table.string('poison');
-  table.string('accessory');
+  table.string('title');
+  table.string('description');
+  table.date('date');
+  table.string('link');
   table.string('image_url');
   })
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTable('pirates')
+  return knex.schema.dropTable('podcasts')
 };

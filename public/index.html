@@ -1,24 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" ng-app='pirates'>
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.js'></script>
-  <script src='javascripts/app.js'></script>
-</head>
-<body ng-controller='PiratesController'>
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <span class="glyphicon glyphicon-eye-close"></span>
-      </a>
-    </div>
-  </div>
-</nav>
-{{ vm.number }}
-<div ng-view></div>
-</body>
+<html lang="en" ng-app='podcast'>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.js'></script>
+    <script src='javascripts/app.js'></script>
+    <script src='javascripts/services/podcast_service.js'></script>
+  </head>
+  <body ng-controller='PodcastController'>
+    <header>
+      <div class='logo'>
+        <svg width="708px" height="180px" viewBox="65 47 708 180" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <text id="CHAMELEON" stroke="none" fill="none" font-family="OpenSans-Light, Open Sans" font-size="100" font-weight="300">
+                <tspan x="65" y="226" fill="#000000">CHAMELEON</tspan>
+            </text>
+            <text id="the-podcast" stroke="none" fill="none" font-family="OpenSans-Light, Open Sans" font-size="40" font-weight="300">
+                <tspan x="433" y="269" fill="#000000">the podcast</tspan>
+            </text>
+            <path d="M616.572666,65.0571008 C616.57267,65.0571016 679.207432,19.6703811 748.842197,79.2094446 C748.842197,79.2094453 801.740635,136.260227 746.416416,201.146945 C746.416416,201.146943 698.687901,251.203586 661.521885,210.490695 C661.521885,210.490693 632.451572,175.859836 681.648838,162.570773 C694.11134,160.029756 725.090244,181.572727 697.361729,196.03171 C694.11134,196.031709 694.11134,210.490693 681.648838,201.146943 C681.648838,201.146943 673.363682,185.129368 694.576572,188.650851 C694.576572,188.65085 708.668369,173.652805 682.092197,170.588351 C682.092197,170.58835 650.75626,176.572727 668.281651,203.00046 C668.281651,203.000459 685.764072,219.148899 709.887119,211.074679 C709.887119,211.074678 745.252354,196.967258 741.320713,141.596163 C741.320713,141.596162 740.094151,128.885227 726.678135,128.885226 C726.678135,128.885225 714.014072,129.31296 714.014072,129.31296 C714.014072,129.31296 720.105865,135.247072 720.105865,142.797852 C720.105865,142.79785 721.339844,148.937501 715.248047,148.9375 C715.248047,148.937499 706.21582,148.9375 706.21582,148.9375 L706.21582,145.898438 L711.168945,141.596161 C711.168945,141.596161 712.020908,140.088352 701.952549,129.698702 C701.952549,129.698701 669.181065,132.841282 657.524815,131.269991 C657.524815,131.26999 662.567383,141.681642 660.698242,144.703125 C658.829102,147.724608 658.821289,150.166993 655.974609,150.166992 C653.12793,150.166991 645.825005,150.166992 645.825005,150.166992 L645.825005,147.864258 L651.521889,144.703125 C651.521889,144.703125 651.608799,141.723118 643.400791,131.148898 C643.400791,129.698701 630.213291,128.922335 630.213291,128.922335 C630.213291,128.922335 584.522461,161.880859 550.883789,117.001953 C550.883789,117.001952 577.457031,116.536133 586.630859,113.711914 C594.687099,113.114259 607.691406,106.209961 607.691406,107.338867 C607.691406,108.467773 606.906246,101.255904 603.641602,104.201172 C597.177734,110.032684 573.453125,110.032684 573.453125,110.032684 C573.453125,110.032684 555.920898,111.650848 546.173252,111.650851 C546.173252,111.65085 537.550205,110.477024 540.686924,99.5112024 C540.686924,97.3373731 549.513096,76.1322955 552.826572,73.340304 C552.826572,73.3403046 551.799229,50.3822959 575.585361,51.7582727 C576.757236,51.7582727 601.06583,37.3149135 616.572666,65.0571008 Z" id="Path-1" stroke="#E261CE" stroke-width="1" fill="#E261CE" fill-rule="evenodd"></path>
+            <path d="M580.365234,79.4501953 C580.365234,79.4501953 582.472656,95.7197266 601.044922,93.4404297 C619.617187,91.1611328 614.792969,72.4580078 614.792969,72.4580078 C614.792969,72.4580078 611.007813,56.8251953 595.686523,58.8544922 C580.365234,60.883789 580.365234,79.4501953 580.365234,79.4501953 Z" id="Path-2" stroke="none" fill="#FFFFFF" fill-rule="evenodd"></path>
+            <ellipse id="Oval-1" stroke="none" fill="#00CED5" fill-rule="evenodd" cx="609" cy="74.5" rx="5" ry="5.5"></ellipse>
+        </svg>
+      </div>
+      <div class='nav'>
+        <h3>Home</h3>
+        <h3>Podcasts</h3>
+      </div>
+    </header>
+    <div ng-view></div>
+  </body>
 </html>
