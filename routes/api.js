@@ -2,17 +2,23 @@ var express = require('express');
 var router = express.Router();
 var knex = require('knex')(require('../knexfile')['development']);
 
-/* GET home page. */
 router.get('/', function(req, res, next) {
-  knex('pirates').then(function(pirates){
-        res.json(pirates)
+  knex('podcasts').orderBy('date', 'desc').limit(1).then(function(podcasts){
+        res.json(podcasts)
   })
+})
+router.get('/more/:date', function(req,res,next){
+  knex('podcasts').where('date', '<', req.params.date).orderBy('date', 'desc').limit(1).then(function(podcasts){
+    res.json(podcasts)
+  })
+})
 router.post('/', function(req, res, next) {
-  return knex('pirates').insert({name: req.body.name, poison: req.body.poison, accessory: req.body.accessory, image_url:            req.body.image_url})
-    .then(function(pirate){
-      res.json(pirate)
+  return knex('podcasts').insert({title: req.body.title, description: req.body.description, date: req.body.date, link: req.body.link, image_url:req.body.image_url})
+    .then(function(podcast){
+      res.json(podcast)
     })
   })
-});
+
+
 
 module.exports = router;

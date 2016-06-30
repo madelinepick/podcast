@@ -1,1 +1,6 @@
-<h1>podcasts will go here</h1>
+<div ng-repeat='podcast in vm.podcasts'>
+  <p>Title: {{podcast.name}}</p>
+  <img src="{{ podcast.image_url }}" alt="">
+</div>
+<p>{{vm.podcasts[vm.podcasts.length-1].date}}</p>
+<button ng-click='addPodcasts(vm.podcasts[vm.podcasts.length-1].date)'>More podcasts</button>
