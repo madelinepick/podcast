@@ -1,11 +1,15 @@
-angular.module('podcast', ['ngRoute'])
+angular.module('podcast', ['ngRoute', 'ngAnimate'])
 .controller('PodcastController', function($scope, $http, $log, PodcastService){
   $scope.vm = {};
   $scope.vm.podcasts = {};
   $scope.addPodcasts = function(date){
     PodcastService.addPodcasts(date).then(function(data){
-      $log.info('data', data)
-      $scope.vm.podcasts.push(data.data[0]);
+      data.data.forEach(function(podcast){
+        $scope.vm.podcasts.push(podcast)
+          $('html, body').animate({
+            scrollTop: $(".morePodcasts").offset().top
+        }, 1200);
+      })
     })
   };
   $scope.createPodcast = function(podcast){

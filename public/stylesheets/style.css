@@ -3,11 +3,16 @@ body {
   margin:0;
   font-family: "Open Sans", sans-serif;
 }
+.main {
+  background-color: #35A9D8;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
 /*header*/
 header {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #333;
 }
 svg {
   width: 400px;;
@@ -26,6 +31,91 @@ h3 {
   padding: 5px;
   text-transform: uppercase;
 }
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color: black;
+}
+/*podcasts*/
+.textWrapper > h2 {
+  font-weight: 300;
+  font-size: 25px;
+  text-transform: uppercase;
+}
+.textWrapper > p {
+  font-size: 14px;
+  font-weight: 500;
+}
+.textWrapper > h5 {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color:rgb(148, 148, 148);
+}
+.textWrapper > h2, .textWrapper > p, .textWrapper > h5{
+  margin: 5px 0;
+}
+.podcast{
+  flex: 0 0 60%;
+  margin: 20px 20% 0 20%;
+  display: flex;
+  background-color: white;
+}
+.textWrapper {
+  flex: 0 0 60%;
+  padding: 2.5%;
+}
+.imgWrapper{
+  flex: 0 0 30%;
+  padding: 2.5%;
+}
 img {
-  max-width: 200px;
+  max-width: 90%;
+  height: auto;
+}
+.morePodcasts {
+  width: 60%;
+  margin: 20px 20%;
+  display: block;
+}
+.morePodcasts > button {
+  border: none;
+  background-color: white;
+  padding: 10px;
+  color: #333;
+  font-weight: 300;
+
+}
+`/*footer*/`
+footer {
+  margin: 40px;
+}
+footer > p {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 300;
+}
+/*animation*/
+.podcast.ng-enter,
+.podcast.ng-leave
+{
+    -webkit-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -moz-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -ms-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    -o-transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+    transition: 300ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all;
+}
+
+.podcast.ng-enter.ng-enter-active,
+.podcast.ng-leave {
+    opacity: 1;
+    top: 0;
+}
+
+.podcast.ng-leave.ng-leave-active,
+.podcast.ng-enter {
+    opacity: 0;
+    top: -20px;
 }

@@ -3,12 +3,13 @@ var router = express.Router();
 var knex = require('knex')(require('../knexfile')['development']);
 
 router.get('/', function(req, res, next) {
-  knex('podcasts').orderBy('date', 'desc').limit(1).then(function(podcasts){
+  knex('podcasts').orderBy('date', 'desc').limit(2).then(function(podcasts){
         res.json(podcasts)
   })
 })
 router.get('/more/:date', function(req,res,next){
-  knex('podcasts').where('date', '<', req.params.date).orderBy('date', 'desc').limit(1).then(function(podcasts){
+  knex('podcasts').where('date', '<', req.params.date).orderBy('date', 'desc').limit(2).then(function(podcasts){
+    console.log(podcasts)
     res.json(podcasts)
   })
 })
