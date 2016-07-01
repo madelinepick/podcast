@@ -1,5 +1,6 @@
 <div class='main'>
-  <div class='podcast' ng-repeat='podcast in vm.podcasts'>
+  <input type="text" placeholder="search" class='search' ng-model='search'>
+  <div class='podcast' ng-repeat='podcast in vm.podcasts | filter: search'>
     <div class='textWrapper'>
       <h2>{{podcast.title}}</h2>
       <h5>{{podcast.date | date : format : medium}}</h5>

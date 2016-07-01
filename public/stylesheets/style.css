@@ -86,9 +86,14 @@ img {
   padding: 10px;
   color: #333;
   font-weight: 300;
-
 }
-`/*footer*/`
+.search {
+  margin: 20px 20% 0px 20%;
+  border-radius: 2px;
+  border: none;
+  padding: 5px;
+}
+/*footer*/
 footer {
   margin: 40px;
 }
