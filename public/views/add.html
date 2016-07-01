@@ -1,13 +1,15 @@
-<form>
-  <label for="title">title</label>
-  <input name='title' type="text" ng-model='podcast.title'>
-  <label for="description">Description</label>
-  <input name='description' type="text" ng-model='podcast.description'>
-  <label for="date">Date</label>
-  <input name='date' type="date" ng-model='podcast.date'>
-  <label for="image_url">Image Url</label>
-  <input name='image_url' type="text" ng-model='podcast.image_url'>
-  <label for="link">Link</label>
-  <input name='link' type="text" ng-model='podcast.link'>
-  <input type="submit" value='submit' ng-click='createPodcast(podcast)'>
-</form>
+<div class='add forest'>
+  <form>
+    <label for="title">title</label>
+    <input name='title' type="text" ng-model='podcast.title'>
+    <label for="description">Description</label>
+    <input name='description' type="text" ng-model='podcast.description'>
+    <label for="date">Date</label>
+    <input name='date' type="date" ng-model='podcast.date'>
+    <label for="image_url">Image Url</label>
+    <input name='image_url' type="text" ng-model='podcast.image_url'>
+    <label for="link">Link</label>
+    <input name='link' type="text" ng-model='podcast.link'>
+    <input type="submit" value='submit' ng-click='createPodcast(podcast)'>
+  </form>
+</div>

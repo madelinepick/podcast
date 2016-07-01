@@ -7,10 +7,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-animate.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.js'></script>
     <script src='javascripts/app.js'></script>
     <script src='javascripts/services/podcast_service.js'></script>
+    <script src='javascripts/typed.js'></script>
+    <script src='javascripts/animation.js'></script>
   </head>
   <body ng-controller='PodcastController'>
     <header>
@@ -34,7 +37,10 @@
     </header>
     <div ng-view></div>
     <footer>
-      <p>© Chameleon, the podcast</p>
+      <div class='footerText'>
+        <p>© Chameleon, the podcast</p>
+        <a href="https://www.instagram.com/madelinepick/" target="_blank"><i class='fa fa-instagram fa-lg'></i></a>
+      </div>
     </footer>
   </body>
 </html>

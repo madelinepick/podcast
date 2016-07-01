@@ -1,4 +1,4 @@
-<div class='main'>
+<div class='main forest'>
   <input type="text" placeholder="search" class='search' ng-model='search'>
   <div class='podcast' ng-repeat='podcast in vm.podcasts | filter: search'>
     <div class='textWrapper'>
@@ -9,6 +9,11 @@
     <div class='imgWrapper'>
       <img src="{{ podcast.image_url }}" alt="">
     </div>
+    <div class='buttonRow'>
+      <button>Play</button>
+      <button>Share</button>
+    </div>
+
   </div>
   <div class='morePodcasts'>
     <button ng-click='addPodcasts(vm.podcasts[vm.podcasts.length-1].date)'>More podcasts</button>
