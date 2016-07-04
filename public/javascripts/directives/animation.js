@@ -3,7 +3,7 @@ angular.module('podcast')
       return {
         link: function (scope, element) {
           $(element).typed({
-            strings: ["Welcome to Chameleon, the podcast.", "Sit back, relax, and listen."],
+            strings: ["Welcome to Chameleon, <br> the podcast.", "Sit back, relax, and listen."],
             typeSpeed: 0,
             });
         }

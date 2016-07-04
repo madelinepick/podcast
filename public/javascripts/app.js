@@ -1,5 +1,6 @@
 angular.module('podcast', ['ngRoute', 'ngAnimate'])
 .controller('PodcastController', function($rootScope, $route, $scope, $http, $log, PodcastService, $routeParams){
+  $scope.showmodal = false;
   $scope.vm = {};
   $scope.vm.podcasts = [];
   $rootScope.podcast = {};
@@ -35,6 +36,10 @@ angular.module('podcast', ['ngRoute', 'ngAnimate'])
 
   $scope.popup = function(podcast){
     PodcastService.popup(podcast)
+  }
+
+  $scope.toggleModal = function(){
+    $scope.showmodal == true ? ($scope.showmodal = false) : ($scope.showmodal = true);
   }
 
   PodcastService.all().then(function(results){$scope.vm.podcasts = results.data});

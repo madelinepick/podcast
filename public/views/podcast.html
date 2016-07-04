@@ -1,4 +1,16 @@
-<p>podcast interface</p>
-<p>{{vm.podcast.value.data.title}}</p>
-<p>{{vm.podcast.value.data.description}}</p>
-<audio src="vm.podcast.value.data.link" controls></audio>
+<div class='main forest'>
+  <div class='podcast player'>
+    <div class='textWrapper'>
+      <h2>{{vm.podcast.value.data.title}}</h2>
+      <h5>{{vm.podcast.value.data.date | date : format : medium}}</h5>
+      <p>{{vm.podcast.value.data.description}}</p>
+    </div>
+    <div class='imgWrapper'>
+      <img src="{{vm.podcast.value.data.image_url}}" alt="">
+    </div>
+    <audio src="/podcasts/beatles.mp3" controls></audio>
+    <div class='buttonRow'>
+      <button><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//chameleon-the-podcast.herokuapp.com/{{vm.podcast.value.data.id}}" target='_blank'>Share</a></button>
+    </div>
+  </div>
+</div>

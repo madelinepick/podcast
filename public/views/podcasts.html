@@ -11,11 +11,16 @@
     </div>
     <div class='buttonRow'>
       <button ng-click="popup(podcast)">Play</button>
-      <button>Share</button>
+      <button><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//chameleon-the-podcast.herokuapp.com/{{podcast.id}}" target='_blank'>Share</a></button>
     </div>
-
   </div>
+
   <div class='morePodcasts'>
     <button ng-click='addPodcasts(vm.podcasts[vm.podcasts.length-1].date)'>More podcasts</button>
   </div>
 </div>
+<!-- <div class='modal' ng-show='showmodal' ng-click='toggleModal()'>
+  <div class='inlay'>
+      SHARE
+  </div>
+</div> -->
