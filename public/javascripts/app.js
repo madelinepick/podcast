@@ -58,6 +58,10 @@ angular.module('podcast', ['ngRoute', 'ngAnimate'])
         templateUrl: 'views/podcasts.html',
         controller: 'PodcastController'
       })
+      .when('/podcasts/', {
+        templateUrl: 'views/podcasts.html',
+        controller: 'PodcastController'
+      })
       .when('/add', {
         templateUrl: 'views/add.html',
         controller: 'PodcastController'
@@ -66,4 +70,5 @@ angular.module('podcast', ['ngRoute', 'ngAnimate'])
         templateUrl: 'views/podcast.html',
         controller: 'PopupController'
       })
+      .otherwise({ redirectTo: '/' });
 });
