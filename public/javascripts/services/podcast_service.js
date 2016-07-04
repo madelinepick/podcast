@@ -1,8 +1,14 @@
 angular.module('podcast')
-.factory('PodcastService', function ($http, $log) {
+.factory('PodcastService', function ($rootScope, $http, $log) {
   return {
     all: function() {
       return $http.get('/api/podcasts');
+    },
+    popup: function(podcast){
+      $rootScope.podcast = podcast;
+	       newWindow=window.open(podcast.id,'name','height=500,width=500');
+	        if (window.focus) {newWindow.focus()}
+	         return false;
     },
     createPodcast: function(podcast){
       return $http.post('/api/podcasts', podcast).then(function (data){
@@ -11,6 +17,9 @@ angular.module('podcast')
     },
     addPodcasts: function(date){
       return $http.get('/api/podcasts/more/'+date);
+    },
+    singlePodcast: function(id){
+      return $http.get('/api/podcasts/'+id);
     }
   }
 })

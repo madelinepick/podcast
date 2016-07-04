@@ -7,18 +7,22 @@ router.get('/', function(req, res, next) {
         res.json(podcasts)
   })
 })
-router.get('/more/:date', function(req,res,next){
-  knex('podcasts').where('date', '<', req.params.date).orderBy('date', 'desc').limit(2).then(function(podcasts){
-    console.log(podcasts)
-    res.json(podcasts)
-  })
-})
 router.post('/', function(req, res, next) {
   return knex('podcasts').insert({title: req.body.title, description: req.body.description, date: req.body.date, link: req.body.link, image_url:req.body.image_url})
     .then(function(podcast){
       res.json(podcast)
     })
   })
+router.get('/:id', function(req, res, next) {
+  return knex('podcasts').where('id', req.params.id).first().then(function(podcast){
+    res.json(podcast)
+  })
+})
+router.get('/more/:date', function(req,res,next){
+  knex('podcasts').where('date', '<', req.params.date).orderBy('date', 'desc').limit(2).then(function(podcasts){
+    res.json(podcasts)
+  })
+})
 
 
 
