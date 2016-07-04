@@ -176,6 +176,9 @@ img {
   border: none;
   padding: 5px;
 }
+.blank {
+  background-color: rgb(231, 230, 230);
+}
 /*footer*/
 footer {
   margin: 40px;
@@ -246,13 +249,16 @@ label {
 }
 /*player*/
 audio {
-  margin-bottom: 20px;
-  padding: 2.5%;
+  margin: 20px 5%;
 }
 .player {
-  border: 1px solid black;
   flex: 0 0 90%;
   margin: 20px 5%;
+  background-size: cover;
+  color:white !important;
+}
+.player > .textWrapper {
+  flex: 0 0 100%;
 }
 /*modal*/
 .modal {
