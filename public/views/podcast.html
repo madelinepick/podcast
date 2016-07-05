@@ -8,7 +8,7 @@
       <p>{{vm.podcast.value.data.description}}</p>
     </div>
     <div class='buttonRow'>
-      <button><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//chameleon-the-podcast.herokuapp.com/{{vm.podcast.value.data.id}}" target='_blank'>Share</a></button>
+      <button ng-click="share(vm.podcast.value.data.id)">Share</button>
     </div>
   </div>
   <audio src="/podcasts/beatles.mp3" controls></audio>

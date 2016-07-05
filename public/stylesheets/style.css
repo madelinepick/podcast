@@ -9,13 +9,13 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+button {
+  cursor: pointer;
+}
 /*home*/
 .homeWrapper{
   width: 90%;
   padding: 5%;
-  /*display: flex;*/
-  /*align-items: center;*/
-  /*justify-content: center;*/
 }
 .homeWrapper > h3 {
   padding: 0px;
@@ -41,13 +41,10 @@ body {
 }
 .introHeader {
   overflow:auto;
-  /*background-image:
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('/images/jungle.jpg');*/
   background-color: #00CED5;
   background-size: cover;
   width: auto;
-  height: 200px;
+  min-height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,12 +56,43 @@ body {
 .element {
   flex: 0 0 100%;
 }
+.inTextLink {
+  color:#E261CE;
+}
 .introText {
   padding: 20px;
 }
+.introText > p {
+  font-size: 14px;
+  font-weight: 300;
+}
+.introText > input {
+  width: 96%;
+  font-size: 16px;
+  border: 1px solid #c8c8c8;
+  padding: 2%;
+  margin: 0px;
+  text-align: center;
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+.introText > input:placeholder-shown {
+  font-weight: 300;
+}
 .subscribe {
-  font-weight: 500;
-  color:#E261CE;
+  font-weight: 300;
+  font-size: 16px;
+  text-transform: uppercase;
+  background-color:#E261CE;
+  color:white;
+  width: 100%;
+  border: none;
+  padding: 2%;
+  margin: 0px;
+  display: block;
+  text-align: center;
+  overflow: auto;
   text-align: center;
 }
 .forest {
@@ -148,14 +176,14 @@ a:hover {
 }
 .textWrapper {
   flex: 0 0 60%;
-  padding: 2.5%;
+  padding: 20px 2.5%;
 }
 .imgWrapper{
   flex: 0 0 30%;
-  padding: 2.5%;
+  padding: 20px 2.5%;
 }
 img {
-  max-width: 90%;
+  width: 90%;
   height: auto;
 }
 .morePodcasts {
@@ -276,11 +304,25 @@ audio {
   align-items: center;
   justify-content: center;
 }
+.modal.ng-hide-add {
+    -webkit-animation: zoomOut 0.4s;
+}
+.modal.ng-hide-remove {
+    -webkit-animation: zoomIn 0.4s;
+}
 .inlay {
   background-color: white;
   flex: 0 0 35%;
   margin: 0 27.5%;
+  padding: 5px;
+}
+.inlay > h3 {
+  display: inline-block;
+  clear: both;
   padding: 5%;
+}
+.fa-close {
+  float: right;
 }
 
 /*media queries*/

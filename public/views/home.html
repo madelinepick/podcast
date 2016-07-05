@@ -6,8 +6,17 @@
       </div>
     </div>
     <div class='introText'>
-      <p>Chameleon shares the nitty gritty details of the journeys of people who are disrupting and influencing the tech and entrepreneurship worlds. The converstations are limited to 30 minutes in the spirit of succint and effective storytelling. The storytellers come from diverse backgrounds but have all ended up in the world of tech and entrepreneurship by different mechanisms. I ask the hard questions. Take a listen.</p>
-      <h3 class='subscribe'>Subscribe for weekly podcasts</h3>
+      <p>Chameleon shares the nitty gritty details of the journeys of people who are disrupting and influencing the tech and entrepreneurship worlds. The converstations are limited to 30 minutes in the spirit of succint and effective storytelling. The storytellers come from diverse backgrounds but have all ended up in the world of tech and entrepreneurship by different mechanisms. I ask the hard questions. <a class='inTextLink' href="/podcasts">Take a listen.</a></p>
+      <input type="text" placeholder="Enter an email" ng-model='email'>
+      <button class='subscribe' ng-click='toggleModal()'>Subscribe to weekly podcasts
+      </button>
     </div>
+  </div>
+</div>
+
+<div class='modal animated' ng-show='showmodal' ng-click='toggleModal()'>
+  <div class='inlay'>
+    <i class='fa fa-close'></i>
+    <h3>You've been added to our list! Keep an eye out for a confirmation email.</h3>
   </div>
 </div>

@@ -40,6 +40,12 @@ angular.module('podcast', ['ngRoute', 'ngAnimate'])
 
   $scope.toggleModal = function(){
     $scope.showmodal == true ? ($scope.showmodal = false) : ($scope.showmodal = true);
+    $scope.email = null;
+  }
+
+  $scope.share = function(id){
+    window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//chameleon-the-podcast.herokuapp.com/'+id, '_blank');
+
   }
 
   PodcastService.all().then(function(results){$scope.vm.podcasts = results.data});
