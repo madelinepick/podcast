@@ -246,7 +246,7 @@ footer {
 }
 .footerText >a >i {
   display: inline;
-  margin-left: 20px;
+  margin: 0px 15px;
 }
 /*add*/
 .add {
@@ -297,7 +297,8 @@ footer {
 }
 /*player*/
 audio {
-  margin: 20px 5%;
+  margin: 20px auto;
+  display: block;
 }
 .player {
   flex: 0 0 90%;
