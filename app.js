@@ -22,10 +22,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/podcasts', routes);
-app.use('*', function (req, res, next) {
-  res.sendFile('index.html', {
-    root: __dirname + '/public'
-  })
+
+app.all('*', (req,res,next) => {
+  res.sendFile('index.html', { root: __dirname + '/public/' })
 })
 
 // catch 404 and forward to error handler

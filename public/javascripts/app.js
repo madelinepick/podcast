@@ -58,7 +58,6 @@ angular.module('podcast', ['ngRoute', 'ngAnimate'])
 })
 
 .config(function($routeProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
 
     $routeProvider
       .when('/', {
@@ -82,4 +81,5 @@ angular.module('podcast', ['ngRoute', 'ngAnimate'])
         controller: 'PopupController'
       })
       .otherwise({ redirectTo: '/' });
+      $locationProvider.html5Mode(true);
 });

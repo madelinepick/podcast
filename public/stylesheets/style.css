@@ -77,10 +77,11 @@ button {
   margin-bottom: 20px;
   font-weight: 300;
 }
-.introText > input:placeholder-shown {
+#mc_embed_signup input:placeholder-shown {
   font-weight: 300;
+  font-size: 14px;
 }
-.subscribe {
+.subscribe{
   font-weight: 300;
   font-size: 16px;
   text-transform: uppercase;
@@ -95,10 +96,32 @@ button {
   overflow: auto;
   text-align: center;
 }
+#mc_embed_signup .mc-field-group {
+  width: 100% !important;
+}
+#mc_embed_signup .subscribe{
+  border: none;
+  border-radius: 0px;
+}
+#mc_embed_signup input {
+  border-radius: 0px;
+}
+#mc_embed_signup form{
+  padding-left: 0px;
+}
+#mc_embed_signup{
+  background:#fff;
+  clear:left;
+}
 .forest {
   background-image:
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url('http://userscontent2.emaze.com/images/8c4a1c2c-a057-4360-9e90-e4bc2d7e21e8/5e103cc6-7555-4162-8186-3ea78d7a7004.jpg');
+}
+label {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+  color:#333;
 }
 /*header*/
 header {
@@ -226,9 +249,6 @@ footer {
   margin-left: 20px;
 }
 /*add*/
-label {
-  color: white;
-}
 .add {
   height: 200px;
 }
