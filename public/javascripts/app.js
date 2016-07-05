@@ -44,7 +44,7 @@ angular.module('podcast', ['ngRoute', 'ngAnimate'])
   }
 
   $scope.share = function(id){
-    window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A//chameleon-the-podcast.herokuapp.com/'+id, '_blank');
+    window.open('https://www.facebook.com/dialog/share?app_id=652077588290773&display=popup&href=https%3A%2F%2Fchameleon-the-podcast.herokuapp.com%2F'+id+'%2F&redirect_uri=https%3A%2F%2Fchameleon-the-podcast.herokuapp.com%2F');
 
   }
 

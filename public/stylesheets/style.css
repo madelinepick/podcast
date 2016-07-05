@@ -301,8 +301,8 @@ audio {
   display: block;
 }
 .player {
-  flex: 0 0 90%;
-  margin: 20px 5%;
+  flex: 0 0 60%;
+  margin: 20px 20%;
   background-size: cover;
   color:white !important;
 }
@@ -360,6 +360,12 @@ audio {
   }
   .textWrapper > h2 {
     font-size: 20px;
+  }
+  .player {
+    flex: 0 0 90%;
+    margin: 20px 5%;
+    background-size: cover;
+    color:white !important;
   }
 }
 @media only screen and (max-width: 480px) {

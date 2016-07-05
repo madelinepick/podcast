@@ -6,7 +6,7 @@ angular.module('podcast')
     },
     popup: function(podcast){
       $rootScope.podcast = podcast;
-	       newWindow=window.open(podcast.id,'name','height=470,width=500');
+	       newWindow=window.open(podcast.id,'name','height=530,width=500');
 	        if (window.focus) {newWindow.focus()}
 	         return false;
     },
