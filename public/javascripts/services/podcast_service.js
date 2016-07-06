@@ -15,6 +15,16 @@ angular.module('podcast')
         return data.data
       })
     },
+    deletePodcast: function(id){
+      return $http.post('/api/podcasts/delete', id).then(function (data){
+        return data.data
+      })
+    },
+    listPodcasts: function(){
+      return $http.get('/api/podcasts/list').then(function (data){
+        return data.data
+      })
+    },
     addPodcasts: function(date){
       return $http.get('/api/podcasts/more/'+date);
     },

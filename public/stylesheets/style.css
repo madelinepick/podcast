@@ -8,6 +8,7 @@ body {
   overflow: auto;
   display: flex;
   flex-wrap: wrap;
+  overflow: auto;
 }
 button {
   cursor: pointer;
@@ -81,7 +82,7 @@ button {
   font-weight: 300;
   font-size: 14px;
 }
-.subscribe{
+.subscribe {
   font-weight: 300;
   font-size: 16px;
   text-transform: uppercase;
@@ -250,7 +251,54 @@ footer {
 }
 /*add*/
 .add {
-  height: 200px;
+  overflow: hidden;
+}
+.add > form {
+  width: 50%;
+  background-color: white;
+  margin: 20px 22.5%;
+  padding: 2.5%;
+}
+.add > form > input{
+  display: block;
+}
+h2 {
+font-size: 25px;
+font-weight: 300;
+margin-top: 0px;
+}
+input[type='textarea'] {
+  height: 75px;
+  width: 200px;
+}
+input[type='submit'] {
+  font-weight: 300;
+  font-size: 14px;
+  text-transform: uppercase;
+  background-color:#E261CE;
+  color:white;
+  width: 200px;
+  border: none;
+  padding: 2%;
+  margin: 0px;
+  display: block;
+  text-align: center;
+  overflow: auto;
+  margin-top: 15px;
+}
+/*list*/
+table {
+  width: 90%;
+  margin-left: 5%;
+}
+td {
+  border: 1px solid black;
+  max-width: 200px;
+  word-wrap:break-word;
+}
+td > .scrollable {
+  overflow: scroll;
+  max-height: 100px;
 }
 /*animation*/
 .podcast.ng-enter,

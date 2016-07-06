@@ -3,18 +3,8 @@ angular.module('podcast', ['ngRoute', 'ngAnimate'])
   $scope.showmodal = false;
   $scope.vm = {};
   $scope.vm.podcasts = [];
+  $scope.vm.list = [];
   $rootScope.podcast = {};
-
-//   $log.info('outside', $routeParams)
-//
-//
-//   $scope.$on('$routeChangeStart', function(next, current) {
-//     $log.info('next', next)
-//     $log.info($routeParams)
-//     PodcastService.onePodcast(next.targetScope.$id).then(function(podcast){
-//     $scope.vm.podcast = podcast;
-//   })
-// })
 
   $scope.addPodcasts = function(date){
     PodcastService.addPodcasts(date).then(function(data){
@@ -30,6 +20,11 @@ angular.module('podcast', ['ngRoute', 'ngAnimate'])
   $scope.createPodcast = function(podcast){
     PodcastService.createPodcast(podcast).then(function(data){
       PodcastService.all().then(function(results){$scope.vm.podcasts = results.data});
+    })
+  };
+  $scope.deletePodcast = function(id){
+    PodcastService.deletePodcast(id).then(function(data){
+      window.location.reload(false);
     })
   };
 
@@ -49,6 +44,8 @@ angular.module('podcast', ['ngRoute', 'ngAnimate'])
   }
 
   PodcastService.all().then(function(results){$scope.vm.podcasts = results.data});
+  PodcastService.listPodcasts().then(function(results){
+    $scope.vm.list = results});
 
 })
 
@@ -74,6 +71,10 @@ angular.module('podcast', ['ngRoute', 'ngAnimate'])
       })
       .when('/add', {
         templateUrl: 'views/add.html',
+        controller: 'PodcastController'
+      })
+      .when('/list', {
+        templateUrl: 'views/list.html',
         controller: 'PodcastController'
       })
       .when('/:id', {

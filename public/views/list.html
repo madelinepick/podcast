@@ -1,0 +1,14 @@
+<table >
+  <tr ng-repeat='podcast in vm.list'>
+    <form action="">
+      <td>{{podcast.title}}</td>
+      <td><div class='scrollable'>{{podcast.description}}</div></td>
+      <td>{{podcast.date}}</td>
+      <td>{{ podcast.image_url }}</td>
+      <td>{{ podcast.link}}</td>
+      <td>
+        <button class='subscribe' ng-click='deletePodcast(podcast.id)'>Delete</button>
+      </td>
+    </form>
+  </tr>
+</table>

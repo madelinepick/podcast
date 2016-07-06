@@ -13,6 +13,16 @@ router.post('/', function(req, res, next) {
       res.json(podcast)
     })
   })
+router.get('/list', function(req,res,next){
+    return knex('podcasts').orderBy('date', 'desc').then(function(podcasts){
+          res.json(podcasts)
+    })
+  })
+router.post('/delete', function(req,res,next){
+    return knex('podcasts').where('id', req.params.id).del().then(function(podcast){
+        res.json(podcast)
+    })
+  })
 router.get('/:id', function(req, res, next) {
   return knex('podcasts').where('id', req.params.id).first().then(function(podcast){
     res.json(podcast)
