@@ -262,6 +262,10 @@ footer {
 .add > form > input, .add > form > textarea{
   display: block;
 }
+.add > form > input[type='text'], .add > form > input[type='date']  {
+  height: 25px;
+  width: 315px;
+}
 h2 {
 font-size: 25px;
 font-weight: 300;

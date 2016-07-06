@@ -5,6 +5,7 @@ angular.module('podcast', ['ngRoute', 'ngAnimate'])
   $scope.vm.podcasts = [];
   $scope.vm.list = [];
   $rootScope.podcast = {};
+  $scope.vm.message = '';
 
   $scope.addPodcasts = function(date){
     PodcastService.addPodcasts(date).then(function(data){
@@ -19,7 +20,12 @@ angular.module('podcast', ['ngRoute', 'ngAnimate'])
 
   $scope.createPodcast = function(podcast){
     PodcastService.createPodcast(podcast).then(function(data){
-      PodcastService.all().then(function(results){$scope.vm.podcasts = results.data});
+      PodcastService.all().then(function(results){
+        $scope.vm.podcasts = results.data;
+        $scope.vm.message = 'You added a podcast!';
+        $log.info($scope.vm.message)
+      });
+      window.location.reload(false);
     })
   };
   $scope.deletePodcast = function(id){
