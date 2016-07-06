@@ -271,7 +271,7 @@ input[type='textarea'] {
   height: 75px;
   width: 200px;
 }
-input[type='submit'] {
+.add >form> input[type='submit'] {
   font-weight: 300;
   font-size: 14px;
   text-transform: uppercase;
