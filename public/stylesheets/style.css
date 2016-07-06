@@ -259,7 +259,7 @@ footer {
   margin: 20px 22.5%;
   padding: 2.5%;
 }
-.add > form > input{
+.add > form > input, .add > form > textarea{
   display: block;
 }
 h2 {
