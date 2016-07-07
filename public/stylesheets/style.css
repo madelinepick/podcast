@@ -194,6 +194,10 @@ a:hover {
   flex: 0 0 10%;
   margin-left: 2.5%;
   margin-right: 2.5%;
+  text-transform: uppercase;
+}
+.buttonRow > button:hover  {
+  background-color: #9f4992;
 }
 .buttonRow > button > a {
   color: white;
@@ -221,12 +225,20 @@ img {
   padding: 10px;
   color: #333;
   font-weight: 300;
+  text-transform: uppercase;
+}
+.morePodcasts > button:hover {
+  background-color: #00CED5;
 }
 .search {
   margin: 20px 20% 0px 20%;
   border-radius: 2px;
   border: none;
-  padding: 5px;
+  padding: 10px;
+  width: 200px;
+}
+.search:placeholder-shown  {
+  text-transform: uppercase;
 }
 .blank {
   background-color: rgb(231, 230, 230);
@@ -254,13 +266,14 @@ footer {
   overflow: hidden;
 }
 .add > form {
-  width: 50%;
+  width: 30%;
   background-color: white;
-  margin: 20px 22.5%;
+  margin: 20px 32.5%;
   padding: 2.5%;
 }
 .add > form > input, .add > form > textarea{
   display: block;
+  margin-bottom: 10px;
 }
 .add > form > input[type='text'], .add > form > input[type='date']  {
   height: 25px;
